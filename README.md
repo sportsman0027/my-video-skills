@@ -32,3 +32,7 @@ Source: an Instagram reel counting down the most-installed Claude skills (skills
 
 ### Not forked (deliberately)
 - **agent-browser** (vercel-labs/agent-browser, the reel's #4): SKILL.md audited clean, but the tool gives an AI full browser control — the highest capability/risk surface of the set — and it is not needed for video work (Muse already has a browser). Listed here only; can be forked in minutes if ever needed.
+
+## Kling AI (added 2026-11-19, security-audited)
+
+- [ComfyUI-KLingAI-API](https://github.com/sportsman0027/ComfyUI-KLingAI-API) — forked from KlingAIResearch/ComfyUI-KLingAI-API. The Kling team's own ComfyUI custom node for the official Kling AI API: Text2Video, Image2Video, image generation, lip sync and effects nodes — the motion-graphics route into Kling from a node workflow. Audit before forking: code read and scanned — it talks only to the official endpoints (api.klingai.com / api-beijing.klingai.com), signs requests locally with the user's own API key (kept in a local config.ini, empty by default), no eval/exec/subprocess, requirements are standard libraries only (pyjwt, httpx, pydantic, pillow, numpy). Notes: running it needs a paid Kling AI API key, and re-check before any run. Rejected alternatives: reverse-engineered Kling API repos (account-ban risk) and spammy "motion prompts" API-gateway repos.
