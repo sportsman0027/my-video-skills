@@ -21,3 +21,14 @@ This is my master repo. The actual tools live in my forks (below); this repo ind
 
 ## How these are used
 Muse reads a fork when a video project needs it, sets the code up locally, and renders with it. Forking alone does not generate video — the setup and render happen per project.
+
+## From the Claude-skills reel (added 2026-11-19, security-audited)
+
+Source: an Instagram reel counting down the most-installed Claude skills (skills.sh leaderboard). Each skill's SKILL.md was read in full and scanned for dangerous patterns (hidden downloads, credential/token access, eval, destructive commands, external URLs) before forking. Forking copies code only — nothing runs, and the original authors get no access to this account. Any skill must be re-checked before it is actually run.
+
+- [skills](https://github.com/sportsman0027/skills) — forked from vercel-labs/skills. Contains **find-skills** (the reel's #1, ~4.1M installs): discovers and installs other agent skills via the official `npx skills` CLI. Audit: SKILL.md clean; note its job is installing other skills, so every future install needs its own check first.
+- [hyperframes](https://github.com/sportsman0027/hyperframes) — forked from heygen-com/hyperframes. Contains **HyperFrames** (the reel's #3): write code (HTML), get a video. Most relevant to documentary/animation work here. Audit: main and CLI SKILL.md files clean, no external URLs.
+- [mattpocock-skills](https://github.com/sportsman0027/mattpocock-skills) — forked from mattpocock/skills. Contains **grill-me** (the reel's #2): a plan/design stress-test interview. Audit: SKILL.md is a two-line prompt wrapper, no code at all — lowest risk of the set.
+
+### Not forked (deliberately)
+- **agent-browser** (vercel-labs/agent-browser, the reel's #4): SKILL.md audited clean, but the tool gives an AI full browser control — the highest capability/risk surface of the set — and it is not needed for video work (Muse already has a browser). Listed here only; can be forked in minutes if ever needed.
