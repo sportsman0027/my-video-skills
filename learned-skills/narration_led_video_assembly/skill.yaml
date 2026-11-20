@@ -1,0 +1,25 @@
+name: narration_led_video_assembly
+title: Narration Led Video Assembly
+description: Assemble a multipart scripted video to uncut narration, checking scene grouping and picture duration first and delivering parts with an editing map.
+category: Media
+include_in_prompt: false
+skill_improvement:
+  managed: true
+  status: active
+  evidence_handles:
+  - message:assistant-msg-ac63629d-3b49-e150-e74b-340ec42394c3
+  - message:assistant-msg-d5b2eb62-4edd-4ad6-ba86-3e1054cc697b
+  - message:assistant-msg-a7d92a83-2092-4711-b272-ec0dcd2b8cf5
+  - message:assistant-msg-40d2ad26-8be4-46d9-bc56-1f619972add1
+  - message:assistant-msg-38797102-8c64-400a-95fb-0fd181905162
+  - message:assistant-msg-a8a6c523-4d94-4997-a968-2ea18e2fbbeb
+  - scheduler_job:earth2-morning-delivery
+  measurement:
+    proxy_metric_id: objective_success_rate
+    success_criterion: In the next multipart scripted video assembly after install, the pre-assembly record shows measured narration pace and a picture to script scene mapping, the delivered total equals the narration total with no cut or sped narration, and the delivery includes an editing map listing slow holds and any topic offsets. If no such assembly occurs in the window, the result is inconclusive rather than a failure.
+    window_days: 30
+  needs_review: false
+  rationale: The 2026-10-28 to 2026-10-29 assembly succeeded in delivery but missed two checks that should precede rendering. Narration pace was assumed at about 150 words per minute and came out at about 132, so a planned 12 minute 5 second film became 13 minutes 44 seconds (message:assistant-msg-ac63629d-3b49-e150-e74b-340ec42394c3). The first assembly estimate of 10 to 15 minutes per part was then revised after 4K retiming proved heavier (message:assistant-msg-d5b2eb62-4edd-4ad6-ba86-3e1054cc697b, message:assistant-msg-a7d92a83-2092-4711-b272-ec0dcd2b8cf5), while the user repeatedly asked how long was left. The scene grouping mismatch between the shot list and the script was disclosed only after delivery (message:assistant-msg-38797102-8c64-400a-95fb-0fd181905162) and then mapped post hoc in an editing map listing slow holds in Scenes 9, 11, 13 and 14 and second half topic offsets (message:assistant-msg-a8a6c523-4d94-4997-a968-2ea18e2fbbeb). A pre-assembly pace measurement and grouping map would have surfaced both before rendering, while the delivered total matching narration exactly and the part by part delivery with an editing map are the parts worth keeping. This is distinct from clean_ai_video_clips, which covers clip generation and frame verification and remains inside its measurement window to 2026-11-27, so it is not re-proposed. The deterministic repeated_handoff_suppression candidates were rejected because all objectives show zero recurring, validation and replay failures and the suppressions concern the loop trigger cadence, which no managed skill can change. Scheduled jobs in the window all succeeded, including the morning delivery job that was cancelled once the user had already received the delivery in chat.
+  review_after: 2026-11-28T04:07:54.855845+00:00
+  reviewed_at: 2026-10-29T04:07:54.855845+00:00
+  run_id: sirun_0009a4db0ff14ee9a497652d5abe754d

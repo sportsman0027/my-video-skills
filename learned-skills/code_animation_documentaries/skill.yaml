@@ -1,0 +1,27 @@
+name: code_animation_documentaries
+title: Code Animation Documentaries
+description: Build flat 2D code animated documentaries with an original design, voice measured timing, and filled sound design.
+category: Media
+include_in_prompt: false
+skill_improvement:
+  managed: true
+  status: active
+  evidence_handles:
+  - message:947c567d-7b4d-4ed7-8e99-00d26dcdb1e2
+  - message:0a59c141-ce1e-44f5-aabb-0ab129f71861
+  - message:21c5f622-fd0a-4d04-b262-1b9f497e65c3
+  - message:aa36b8fc-c4de-48da-92c5-c53705625058
+  - message:b159db01-6433-4ca5-aaa4-62c46d915082
+  - message:1fcc4276-c7f7-4352-95a8-9dadaf9c87b5
+  - ~/workspace/code-animation-test/part2/test-part2.mp4
+  - ~/workspace/custom-skills/clean_ai_video_clips/SKILL.md
+  - ~/workspace/custom-skills/narration_led_video_assembly/SKILL.md
+  measurement:
+    proxy_metric_id: objective_success_rate
+    success_criterion: In the next code animation documentary build after install, the record shows a design plan shown before build with an original language distinct from the reference, a word timing table measured from the voice, pauses filled with a sound bed plus event sound, and no user correction for copying the reference design. If no such build occurs in the window, the result is inconclusive rather than a failure.
+    window_days: 30
+  needs_review: false
+  rationale: The window contains a real user corrected failure that neither active managed skill covers. V3 message 21c5f622 copied the Claude reference design language and used proportional word timing estimates, and user message 947c567d judged it still a little behind Claude and too similar to the reference. The assistant commitment message 0a59c141 separated the quality bar from the design language and required measured timings and procedural texture. Part 2 message aa36b8fc then applied those corrections with an original Ink and Paper Lab plan shown before build, a 90 word timing table from silence detection plus RMS envelope, and 77 sound events with filled pauses, though its verdict remains open so the skill codifies the user ordered method rather than claiming Part 2 itself was accepted. Skill search for code animation, measured timing, sound design, and original design returned no code animation skill. clean_ai_video_clips covers AI generated clips without baked text and narration_led_video_assembly covers multipart assembly to uncut narration, so this skill is distinct and does not re-propose either in-window skill. The deterministic handoff suppression candidates and the generic tool and media generation failures in chunk 2 carry no error text or manageable mechanism, cron jobs all succeeded, only 2 active learned skills exist so no consolidation is triggered, and no recovered notes await review.
+  review_after: 2026-11-29T04:16:06.869641+00:00
+  reviewed_at: 2026-10-30T04:16:06.869641+00:00
+  run_id: sirun_a4173578df6d451d8ab5f394047b4d1a

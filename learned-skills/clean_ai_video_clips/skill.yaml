@@ -1,0 +1,25 @@
+name: clean_ai_video_clips
+title: Clean AI Video Clips
+description: Generate AI video clips without baked text or branding, verify every clip by its frames, and fix flaws in post before delivery.
+category: Media
+include_in_prompt: false
+skill_improvement:
+  managed: true
+  status: active
+  evidence_handles:
+  - message:assistant-msg-d9c3b1b9-33a1-42ac-902b-4e47f37af0f4
+  - message:assistant-msg-8fb787d8-0795-4192-80d0-2d5711e58cc2
+  - message:assistant-msg-c3ee87b0-8763-4607-8043-808c28ffb119
+  - runtime-child:4b87aa63-9163-5897-b829-5dbee86408e5
+  - runtime-child:ecf6d62a-8e23-5834-a1f4-7c6e484c1fed
+  - runtime-child:8ff8a57f-4c76-54b4-88a2-b496238cf4d4
+  - ~/workspace/custom-skills/recovered-skill-notes/SKILL.md
+  measurement:
+    proxy_metric_id: objective_success_rate
+    success_criterion: In the next multi-clip video build after install, the share of clips needing rebuild for baked text, logos, labels, or wrong size relations falls below the 13 of 72 rebuild rate seen on 2026-10-28, and no clip is delivered without a start, middle, and end frame check recorded in its delivery report.
+    window_days: 30
+  needs_review: false
+  rationale: 'The same failure recurred across two projects. In Building Earth 2.0 the 2026-10-28 delivery listed 13 shots for rebuild for baked NASA, ESA, and Roscosmos logos, readable labels and captions, a Mars to Earth morph, a wrong Mars to Earth size relation, and a duplicate planet, plus 2 shots for edit fixes, out of 72 shots totalling 725 seconds. The countermeasures that worked in the evidence were text free generation with all labels added by hand in post, close detail framing that produced the first clean astronaut shot, distant framing with no text, saving the old version and replacing it only when the new version was clearly better, and disclosing the exact flaw list with delivery. No existing skill covers this method: skill_search for AI video generation and frame verification returned only avatar dance videos, translation, spoken audio, and podcast generation. The deterministic repeated_handoff_suppression candidates were rejected because they concern the loop''s own trigger cadence, which no managed skill can change, and the only managed learned file is already retired, so no consolidation is required.'
+  review_after: 2026-11-27T16:38:59.521926+00:00
+  reviewed_at: 2026-10-28T16:38:59.521926+00:00
+  run_id: sirun_7f89e808cbd6490995fb960fd1d8778d
