@@ -85,3 +85,20 @@ Source: the second Instagram reel of the same batch. Each repo was downloaded lo
 
 ### Considered and deliberately NOT forked from video 2
 - **vox-explainer-skill** (CK42BB/vox-explainer-skill, 283 stars, MIT): pure-markdown repo (zero code risk), but the workflow it prescribes runs every stage through the paid Atlas Cloud API with the user's own key (~$3–8 per 60-second film: Seedream keyframes, Gemini image-to-video, xAI TTS, MiniMax music). Conflicts with standing rules: no paid keys without approval, token economy, and no recognizable-AI look (this pipeline is 100% AI-generated, with burned-in subtitles and a music bed by default). The local muse-documentary-engine already covers its pipeline shape for free. Transferable ideas (style-anchor consistency, beat discipline) were captured in the audit summary. Installed locally as reference only, with an explicit do-not-run-without-approval caution.
+
+## Free alternatives to the paid pieces (searched and audited 2026-11-20)
+
+On request, GitHub and skills.sh were searched for free, open-source replacements for the toolkit's two paid-dependent pieces (vox-explainer-skill's paid Atlas Cloud pipeline; the Kling nodes' paid API key), applying the only-new rule: nothing was added that this GitHub or Muse's local skills already cover. 20+ repos fact-checked via the API, 11 cloned and audited; nothing was executed. Honest headline: no new SKILL.md skill was installed — every skill-shaped candidate was paid, platform-bound, or a duplicate. Three repos were forked:
+
+- [OpenMontage](https://github.com/sportsman0027/OpenMontage) — forked from OpenMontageInc/OpenMontage (81,800 stars, AGPL-3.0). A free explainer/documentary platform with a documented zero-API-key mode (Piper TTS + Remotion) — including a documentary-montage pipeline over free/open archives (Archive.org, NASA, Wikimedia Commons) with CLIP search, the one capability absent from both this toolkit and the local engine. Audit: CAUTION — one curl|bash installer string for an optional third-party CLI (never run blindly), AGPL copyleft, and an optional Atlas client among many providers. Forked as a reference/adoption candidate; NOT installed locally (its 141 skills drive its own runtime, and its platform role overlaps the local muse-documentary-engine). Re-check before any run.
+- [Wan2.2](https://github.com/sportsman0027/Wan2.2) — forked from Wan-Video/Wan2.2 (Apache-2.0). Free text/image-to-video models — the free Kling replacement, for a future GPU machine only: the 5B model needs at least 24 GB VRAM; it cannot run in the current VM (no GPU). Reference-only.
+- [LTX-Video](https://github.com/sportsman0027/LTX-Video) — forked from Lightricks/LTX-Video (Apache-2.0 code). Free text/image-to-video; the 2B model runs on ~8 GB VRAM — the low-VRAM companion for a future GPU machine. Reference-only; check model-weight licences at adoption time.
+
+### Considered and deliberately NOT forked in this search
+- **vox-ai-motion-graphics-generator** (363 stars, NO licence): a "vox-style" skill whose every stage runs on the paid MuAPI API with a burned-in watermark — the same paid disease as Atlas under a new name.
+- **purffle-shorts** (99 stars, MIT): audit-clean and honestly free (Ollama + Edge-TTS) — the best free MoneyPrinter-style clone found — but a duplicate of the already-forked MoneyPrinterTurbo, so left out under the only-new rule.
+- **OpenReels** (246 stars, MIT): polished, but visuals/music are paid Veo/Kling/Lyria; duplicates MoneyPrinterTurbo + the local engine.
+- **Pixelle-Video** (30,351 stars, Apache-2.0): clean, but generation needs a local GPU ComfyUI or paid APIs; duplicate.
+- **NarratoAI** (11,886 stars, MIT): film-commentary recuts built around sponsored cloud LLM APIs; the local engine's home ground.
+- **ShortGPT** (8,185 stars): unmaintained since 2025-02 and a duplicate. Also considered and left: MoneyPrinterV2, Maestro, dramaclaw, topic2manim, ComfyUI itself (reasons in the audit summary).
+- Note: the free "faceless-explainer" skill on skills.sh ships inside heygen-com/hyperframes — already owned via the existing hyperframes fork, so no action was needed.
